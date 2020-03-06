@@ -1,0 +1,27 @@
+{
+  "name": "ts-playground",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Simple Node.js + tsc playground that allows to test latest TypeScript features",
+  "scripts": {
+    "build": "rimraf ./out/**/* && tsc",
+    "prestart": "npm run build",
+    "start": "node --inspect=0.0.0.0 --nolazy --enable-source-maps ./out/main.js",
+    "watch": "nodemon --watch ./src --ext ts --delay 10 --verbose --no-update-notifier --exec npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eu-ge-ne/ts-playground.git"
+  },
+  "author": "Eugene Pobochny <eugene.pobochny@gmail.com> (https://github.com/eu-ge-ne)",
+  "license": "https://unlicense.org",
+  "bugs": {
+    "url": "https://github.com/eu-ge-ne/ts-playground/issues"
+  },
+  "homepage": "https://github.com/eu-ge-ne/ts-playground#readme",
+  "dependencies": {
+    "nodemon": "2.0.2",
+    "rimraf": "3.0.2",
+    "typescript": "3.8.3"
+  }
+}

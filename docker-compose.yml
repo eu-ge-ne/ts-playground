@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  ts-playground:
+    build:
+      context: .
+    image: ts-playground
+    command: npm run watch
+    ports:
+      - "9229:9229"
+    volumes:
+      - type: bind
+        source: ./src
+        target: /app/src
+        read_only: true
+      - type: bind
+        source: ./out
+        target: /app/out
